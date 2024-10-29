@@ -7,9 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
     public TextMeshProUGUI scoreText;
-    //public TextMeshProUGUI timeText;
-
-
+ 
     public float remainingTime = 60f;
     public int score { get; private set; } = 0; //tạo điểm bắt đầu =0
 
@@ -93,18 +91,19 @@ public class ScoreManager : MonoBehaviour
         score -= x;
         Debug.Log("Reducescore");
     }
-    public  void Reducetime() //hàm nhận giá trị int và tên amount
+    public  void Reducetime(float z) //hàm nhận giá trị int và tên amount
     {
-        remainingTime -= 5;
+        remainingTime -= z;
         //UpdateUI();
        
         Debug.Log("reducetime");
     }
-    public  void AddTime()
+    public  void AddTime( float z)
     {
-        remainingTime += 10;
+        remainingTime += z;
         //UpdateUI();
         Debug.Log("extratime");
     }
 
+   
 }
